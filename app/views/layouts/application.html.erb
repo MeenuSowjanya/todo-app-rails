@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <% if @current_user %>
+    <div class = "UserHeader-container">
+     <p class="UserHeader">
+       <%= image_tag "userIcon.png", class: "TodoItem-userIcon" %><%= @current_user.first_name %>
+    </p>
+       <%= form_with(url: "/signout", class: "TodoItem-signOut",method: "delete") do %>
+              <%= image_submit_tag("signOut.png", class: "TodoItem-signOutIcon")%>
+      <% end %>
+   <% end %>
+   </div>
+   <% if flash[:error] %>
+    <p class="Flash-error">
+   <%= flash[:error] %>
+</p>
+<% end %>
     <%= yield %>
   </body>
 </html>

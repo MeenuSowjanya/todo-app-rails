@@ -9,17 +9,17 @@
     <% end %>
     <%= render partial: "todo-section", locals: {
                  section_title: "Overdue",
-                 todos: Todo.overdue,
+                 todos: @todos.overdue,
                  show_due_date: true,
                } %>
     <%= render partial: "todo-section", locals: {
                  section_title: "Duetoday",
-                 todos: Todo.duetoday,
+                 todos: @todos.duetoday,
                  show_due_date: false,
                } %>
     <%= render partial: "todo-section", locals: {
-                 section_title: "Due Later.",
-                 todos: Todo.duelater,
+                 section_title: "Due Later",
+                 todos: @todos.duelater,
                  show_due_date: true,
                } %>
   </article>
