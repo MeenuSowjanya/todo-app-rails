@@ -38,7 +38,7 @@ class TodosController < ApplicationController
         todo.save  
         redirect_to todos_path
     end
-
+    
     private 
     def todo_params
       params.require(:todo).permit(:todo_text, :due_date)
